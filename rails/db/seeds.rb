@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Team.create(name: 'Manchester United FC', short_name: 'ManU', crest: 'http://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg', code: 'MUFC', value: 377250000, currency: '€')
+Team.create(name: 'Chelsea FC', short_name: 'Chelsea', crest: 'http://upload.wikimedia.org/wikipedia/de/5/5c/Chelsea_crest.svg', code: 'CFC', value: 531750000, currency: '€')
+Team.create(name: 'Arsenal FC', short_name: 'Arsenal', crest: 'http://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg', code: 'AFC', value: 402000000, currency: '€')
