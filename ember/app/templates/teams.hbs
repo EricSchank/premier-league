@@ -1,0 +1,16 @@
+Teams!!!
+
+<ul class="team-list">
+{{#each model as |team|}}
+<li class="team">
+  <ul class="team-attrs">
+    <li><img class="circle" src="{{team.crest}}"></li>
+    <li>{{team.name}}</li>
+    <li>{{team.shortName}}</li>
+    <li>{{team.code}}</li>
+    <li>{{team.value}}</li>
+    <li>{{team.currency}}</li>
+  </ul>
+</li>
+{{/each}}
+</ul>
