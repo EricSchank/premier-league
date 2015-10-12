@@ -7,6 +7,7 @@ class CreateTeams < ActiveRecord::Migration
       t.string :code
       t.integer :value
       t.string :currency
+      t.integer :data_id
       t.timestamps null: false
     end
   end
