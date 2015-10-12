@@ -1,3 +1,11 @@
-<h2 id="title">Welcome to Ember</h2>
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    <span id="title">Premier League</span>
+    {{#paper-button}}{{link-to 'Home' 'index'}}{{/paper-button}}
+    {{#paper-button}}{{link-to 'Teams' 'teams'}}{{/paper-button}}
+  </div>
+{{/paper-toolbar}}
 
-{{outlet}}
+{{#paper-content}}
+  {{outlet}}
+{{/paper-content}}
