@@ -28,10 +28,11 @@ class Player < ActiveRecord::Base
   end
 
   def self.update_player(player, hash, value)
+    pos = translate_position(hash['position'])
     player.update(
       data_id: hash['id'],
       name: hash['name'],
-      position: hash['position'],
+      position: pos,
       jersey_number: hash['jerseyNumber'],
       birth: hash['birthDate'],
       nationality: hash['nationality'],
@@ -39,6 +40,33 @@ class Player < ActiveRecord::Base
       value: value[0],
       currency: value[1]
     )
+  end
+
+  def self.translate_position(pos)
+    case pos
+    when 'Torwart'
+      'Keeper'
+    when 'Rechter Verteidiger'
+      'Right-Back'
+    when 'Linker Verteidiger'
+      'Left-Back'
+    when 'Innenverteidiger'
+      'Centre Back'
+    when 'Zentrales Mittelfeld'
+      'Central Midfield'
+    when 'Defensives Mittelfeld'
+      'Defensive Midfield'
+    when 'Rechtes Mittelfeld'
+      'Right Midfield'
+    when 'Linkes Mittelfeld'
+      'Left Midfield'
+    when 'Linksau&szlig;en'
+      'Left Wing'
+    when 'Mittelst&uuml;rmer'
+      'Centre Forward'
+    else
+      pos
+    end
   end
 
   def self.parse_money(money)
