@@ -1,0 +1,17 @@
+{{#paper-list}}
+  {{#each model as |player|}}
+    {{#paper-item class="md-3-line player-entry" param=player}}
+        <img src={{player.team.crest}} alt={{player.team.shortName}} class="md-avatar">
+        <div class="md-list-item-text">
+          <h3>#{{player.jerseyNumber}} {{player.name}}</h3>
+          <h4>{{player.position}}</h4>
+          <h4>{{player.nationality}} {{player.value}}{{player.currency}}</h4>
+        </div>
+    {{/paper-item}}
+    {{paper-divider}}
+  {{/each}}
+{{/paper-list}}
+
+<h6>
+<a title="By Pallo_valmiina.jpg: Christopher Bruno (sxc.hu  derivative work: Sir James (talk)) [CC BY-SA 2.5-2.0-1.0 (http://creativecommons.org/licenses/by-sa/2.5-2.0-1.0), CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AFootball_Pallo_valmiina-cropped.jpg">Image Credit: Christopher Bruno</a>
+</h6>

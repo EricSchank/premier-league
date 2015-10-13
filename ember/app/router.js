@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('teams');
   this.route('team', {path: '/team/:team_id'});
+  this.route('players');
 });
 
 export default Router;

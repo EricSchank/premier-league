@@ -1,0 +1,10 @@
+{{#paper-card class="team-players"}}
+  {{#paper-card-content}}
+    <h3>Players</h3>
+    {{#paper-list}}
+      {{#each players as |player|}}
+        {{team-player-entry player=player}}
+      {{/each}}
+    {{/paper-list}}
+  {{/paper-card-content}}
+{{/paper-card}}

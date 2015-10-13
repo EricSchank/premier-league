@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  players: DS.hasMany('player'),
   name: DS.attr('string'),
   shortName: DS.attr('string'),
   code: DS.attr('string'),

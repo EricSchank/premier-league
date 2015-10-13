@@ -1,9 +1,17 @@
-<h3>{{model.name}} ({{model.code}})</h3>
-<div>
-  <img src="{{model.crest}}"/>
-</div>
-<div>
-  <span>{{model.shortName}} value:</span>
-  <span>{{model.value}} {{model.currency}}</span>
-</div>
+{{#paper-card class="team-card"}}
+  {{#paper-card-content}}
+    <div class="team-logo">
+      <img src="{{model.crest}}"/>
+    </div>
+    <h2>{{model.name}}</h2>
+    <p>
+      <span>{{model.shortName}}  ({{model.code}})</span>
+      <br/>
+      <span> Team value: {{model.value}} {{model.currency}}</span>
+    </p>
+  {{/paper-card-content}}
+{{/paper-card}}
+
+{{team-player-list players=model.players}}
+
 {{outlet}}

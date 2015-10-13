@@ -1,0 +1,9 @@
+{{paper-divider}}
+{{#paper-item class="md-3-line player-entry" param=player action="goToTeam"}}
+    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Soccerball.svg/626px-Soccerball.svg.png' alt={{player.team.shortName}} class="md-avatar">
+    <div class="md-list-item-text">
+      <h3>#{{player.jerseyNumber}} {{player.name}}</h3>
+      <h4>{{player.position}}</h4>
+      <h4>{{player.nationality}} {{player.value}}{{player.currency}}</h4>
+    </div>
+{{/paper-item}}
