@@ -12,10 +12,11 @@ class Player < ActiveRecord::Base
   base_uri 'api.football-data.org'
   format :json
   default_params :output => 'json'
+  headers 'X-Auth-Token' => ENV['SOCCER_API']
 
   # TODO: Need to handle removing players that were traded or retired or let go
   def self.refresh(team)
-    data = get("/alpha/teams/#{team.id}/players")
+    data = get("/alpha/teams/#{team.data_id}/players")
     players = data['players']
     players.each do |hash|
       value = parse_money(hash['marketValue'])
@@ -42,6 +43,10 @@ class Player < ActiveRecord::Base
 
   def self.parse_money(money)
     r = CURRENCY_REGEX.match(money)
-    [r[1].gsub(/,/, '').to_i, r[2]]
+    if r
+      [r[1].gsub(/,/, '').to_i, r[2]]
+    else
+      [0, '€']
+    end
   end
 end

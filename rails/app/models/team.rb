@@ -13,17 +13,19 @@ class Team < ActiveRecord::Base
   base_uri 'api.football-data.org'
   format :json
   default_params :output => 'json'
+  headers 'X-Auth-Token' => ENV['SOCCER_API']
 
   def self.refresh
     data = get("/alpha/soccerseasons/#{SEASON_ID}/teams")
     teams = data['teams']
     teams.each do |hash|
       value = parse_money(hash['squadMarketValue'])
-      id = id(hash)
+      id = team_id(hash)
       team = Team.where(data_id: id).first_or_create do |team|
         team.update(data_id: id, name: hash['name'], short_name: hash['shortName'], crest: hash['crestUrl'], code: hash['code'], value: value[0], currency: value[1])
       end
       team.update(name: hash['name'], short_name: hash['shortName'], crest: hash['crestUrl'], code: hash['code'], value: value[0], currency: value[1])
+      Player.refresh(team)
     end
   end
 
@@ -32,7 +34,7 @@ class Team < ActiveRecord::Base
     [r[1].gsub(/,/, '').to_i, r[2]]
   end
 
-  def self.id(hash)
+  def self.team_id(hash)
     self_url = hash['_links']['self']['href']
     id = ID_REGEX.match(self_url)[1]
   end
