@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   namespace :api do
     resources :teams
     resources :players
+    resources :users
+    resources :team_faves, path: 'team-faves'
+    get 'csrf' => 'csrf#index'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

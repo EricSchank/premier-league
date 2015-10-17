@@ -4,6 +4,7 @@ class Team < ActiveRecord::Base
   include HTTParty
 
   has_many :players
+  has_many :team_faves
 
   SEASON_ID = 398
   CURR = '\$€£₤¥'
