@@ -1,5 +1,9 @@
  @import 'ember-paper';
 
+md-icon.favorited {
+  color: #8B0000;
+}
+
 .loading-screen {
   md-progress-circular {
     width: 100%;

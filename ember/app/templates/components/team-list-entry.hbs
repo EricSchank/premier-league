@@ -3,8 +3,8 @@
     <div class="md-list-item-text">
       <h3>{{item.name}}</h3>
     </div>
-    {{#paper-button icon-button=true param=item action="secondaryPersonClick"}}
-      {{paper-icon icon="favorite-border"}}
+    {{#paper-button icon-button=true param=item action="faveTeam"}}
+      {{paper-icon icon=item.faveIcon class=item.faveClass}}
     {{/paper-button}}
 {{/paper-item}}
 {{paper-divider}}

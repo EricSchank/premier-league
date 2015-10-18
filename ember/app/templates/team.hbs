@@ -5,6 +5,9 @@
     </div>
     <h2>{{model.name}}</h2>
     <p>
+      {{#paper-button icon-button=true param=model action='faveTeam'}}
+        {{paper-icon icon=model.faveIcon class=model.faveClass}}
+      {{/paper-button}}
       <span>{{model.shortName}}  ({{model.code}})</span>
       <br/>
       <span> Team value: {{model.value}} {{model.currency}}</span>
