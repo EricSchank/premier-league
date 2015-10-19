@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :players
     resources :users
     resources :team_faves, path: 'team-faves'
+    resources :standings
     get 'csrf' => 'csrf#index'
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -5,6 +5,7 @@ class Team < ActiveRecord::Base
 
   has_many :players
   has_many :team_faves
+  has_one :standing
 
   SEASON_ID = 398
   CURR = '\$€£₤¥'
