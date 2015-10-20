@@ -1,7 +1,7 @@
 class CreateStandings < ActiveRecord::Migration
   def change
     create_table :standings do |t|
-      t.integer :team_id, null: false
+      t.integer :team_id
       t.integer :position
       t.integer :played_games
       t.integer :points
