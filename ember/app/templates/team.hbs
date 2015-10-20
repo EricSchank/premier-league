@@ -3,14 +3,31 @@
     <div class="team-logo">
       <img src="{{model.crest}}"/>
     </div>
-    <h2>{{model.name}}</h2>
-    <p>
+    <h2>#{{model.standing.position}} - {{model.name}}</h2>
+    <p class="team-details">
       {{#paper-button icon-button=true param=model action='faveTeam'}}
         {{paper-icon icon=model.faveIcon class=model.faveClass}}
       {{/paper-button}}
       <span>{{model.shortName}}  ({{model.code}})</span>
       <br/>
+      Points: {{model.standing.points}} (Rank: {{model.standing.position}})
+      <br/>
+      Games Played: {{model.standing.playedGames}}
+      <br/>
       <span> Team value: {{model.value}} {{model.currency}}</span>
+    </p>
+    <p class="my-grid">
+      {{#paper-grid-list md-cols="3" md-row-height="25px" md-gutter="3px"}}
+        {{#paper-grid-tile class="grid-title" md-colspan="3"}}Goals{{/paper-grid-tile}}
+        {{#paper-grid-tile}}For{{/paper-grid-tile}}
+        {{#paper-grid-tile}}Against{{/paper-grid-tile}}
+        {{#paper-grid-tile}}Diff{{/paper-grid-tile}}
+        {{#paper-grid-tile}}{{model.standing.goals}}{{/paper-grid-tile}}
+        {{#paper-grid-tile}}{{model.standing.goalsAgainst}}{{/paper-grid-tile}}
+        {{#paper-grid-tile}}{{model.standing.goalDifference}}{{/paper-grid-tile}}
+      {{/paper-grid-list}}
+    </p>
+    <p>
     </p>
   {{/paper-card-content}}
 {{/paper-card}}

@@ -3,6 +3,7 @@ import Ember from 'ember';
 
 export default DS.Model.extend({
   players: DS.hasMany('player'),
+  standing: DS.belongsTo('standing'),
   teamFaves: DS.hasMany('team-fave'),
   name: DS.attr('string'),
   shortName: DS.attr('string'),

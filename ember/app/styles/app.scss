@@ -29,11 +29,35 @@ md-icon.favorited {
      float: left;
      margin-right: 15px;
      img {
-       width: 100px;
+       width: 150px;
      }
    }
    & ::after {
      clear: left;
+   }
+   .team-logo + h2 {
+     margin-bottom: 0;
+   }
+   .team-details {
+     margin-top: 0;
+     float: left;
+     button {
+       margin-left: 0;
+       width: auto;
+       height: auto;
+       line-height: normal;
+     }
+   }
+   .my-grid {
+     float: left;
+     min-width: 175px;
+     margin-left: 20px;
+     md-grid-list {
+       border: 1px solid #DDD;
+       .grid-title {
+         background-color: #DDD;
+       }
+     }
    }
  }
 

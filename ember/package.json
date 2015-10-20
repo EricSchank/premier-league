@@ -37,6 +37,6 @@
     "ember-data": "2.1.0",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3",
-    "ember-paper": "0.2.8"
+    "ember-paper": "git+http://github.com:miguelcobain/ember-paper.git#0b713a74f436c6a2a1e08c6c8aebea68874b39f5"
   }
 }
