@@ -11,7 +11,7 @@ class Api::StandingsController < ApplicationController
   def show
     id = params[:id]
     standing = Rails.cache.fetch("/standing/#{id}") do
-      Standing.where(id: id).includes(:team)
+      Standing.where(id: id).includes(:team).first
     end
     render json: standing
   end
