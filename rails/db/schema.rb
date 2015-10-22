@@ -34,13 +34,13 @@ ActiveRecord::Schema.define(version: 20151019132915) do
   add_index "players", ["team_id"], name: "index_players_on_team_id", using: :btree
 
   create_table "standings", force: :cascade do |t|
+    t.integer  "team_id"
     t.integer  "position"
     t.integer  "played_games"
     t.integer  "points"
     t.integer  "goals"
     t.integer  "goals_against"
     t.integer  "goal_difference"
-    t.integer  "team_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

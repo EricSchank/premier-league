@@ -2,7 +2,11 @@ class Api::TeamFavesController < ApplicationController
   def create
     data = params["data"]
     user = User.where(id: data["attributes"]["user-id"]).first
-    Rails.logger.error "User Not Found" and return unless user
+    unless user
+      Rails.logger.error "User Not Found"
+      head 500
+      return
+    end
     team = Team.where(id: data["relationships"]["team"]["data"]["id"]).first
     fave = team.team_faves.where(user: user).first_or_create!
     Rails.cache.delete("/teams")

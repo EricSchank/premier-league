@@ -15,6 +15,7 @@ class Api::TeamsController < ApplicationController
       cur_team = Team.where(id: id).includes(:players, :team_faves).first
       Rails.cache.fetch("/team-refresh/#{id}") do
         Player.refresh(cur_team)
+        Standing.refresh
       end
       cur_team
     end

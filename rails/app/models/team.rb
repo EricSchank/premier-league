@@ -28,6 +28,7 @@ class Team < ActiveRecord::Base
       end
       team.update(name: hash['name'], short_name: hash['shortName'], crest: hash['crestUrl'], code: hash['code'], value: value[0], currency: value[1])
       Player.refresh(team)
+      Standing.refresh
     end
   end
 
