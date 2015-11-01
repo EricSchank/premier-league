@@ -1,5 +1,10 @@
  @import 'ember-paper';
 
+.md-toolbar-tools > img {
+  width: 30px;
+  margin-right: 15px;
+}
+
 md-icon.favorited {
   color: #8B0000;
 }
