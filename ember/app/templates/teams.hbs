@@ -1,4 +1,5 @@
 {{#paper-list}}
+  {{team-list-header}}
   {{#each model as |item|}}
     {{team-list-entry item=item goToTeam=(action 'goToTeam') faveTeam=(action 'faveTeam')}}
   {{/each}}

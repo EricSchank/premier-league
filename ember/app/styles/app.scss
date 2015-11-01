@@ -23,6 +23,18 @@ md-icon.favorited {
   }
 }
 
+.team-list-entry {
+  h3 {
+    min-width: 500px;
+  }
+}
+
+.team-list-header {
+  img {
+    visibility: hidden;
+  }
+}
+
  .player-entry {
    h3 {
      font-weight: 500 !important;
