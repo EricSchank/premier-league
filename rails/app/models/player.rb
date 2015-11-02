@@ -29,13 +29,14 @@ class Player < ActiveRecord::Base
 
   def self.update_player(player, hash, value)
     pos = translate_position(hash['position'])
+    nat = translate_nationality(hash['nationality'])
     player.update(
       data_id: hash['id'],
       name: hash['name'],
       position: pos,
       jersey_number: hash['jerseyNumber'],
       birth: hash['birthDate'],
-      nationality: hash['nationality'],
+      nationality: nat,
       contract: hash['contractDate'],
       value: value[0],
       currency: value[1]
@@ -66,6 +67,31 @@ class Player < ActiveRecord::Base
       'Centre Forward'
     else
       pos
+    end
+  end
+
+  def self.translate_nationality(nat)
+    case nat
+    when 'Australien'
+      'Australia'
+    when 'Elfenbeinküste'
+      'Ivory Coast'
+    when 'Cote d\'Ivoire'
+      'Ivory Coast'
+    when 'Frankreich'
+      'France'
+    when 'Irland'
+      'Ireland'
+    when 'Norwegen'
+      'Norway'
+    when 'Polen'
+      'Poland'
+    when 'Schottland'
+      'Scotland'
+    when 'Südafrika'
+      'South Africa'
+    else
+      nat
     end
   end
 
