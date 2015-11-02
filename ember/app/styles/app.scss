@@ -9,6 +9,16 @@ md-icon.favorited {
   color: #8B0000;
 }
 
+md-list-item {
+  & > button > span {
+    width: 100%;
+  }
+  .md-list-item-text {
+    width: 100%;
+  }
+
+}
+
 .loading-screen {
   md-progress-circular {
     width: 100%;
@@ -30,6 +40,7 @@ md-icon.favorited {
 }
 
 .team-list-header {
+  background-color: color($color-light-blue, '50');
   img {
     visibility: hidden;
   }
